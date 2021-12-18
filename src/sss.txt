@@ -1,0 +1,111 @@
+[{'trxhash': '990e6f4fb83fd734b08683cad17f2776598d91e81fa46ab5d547ff1e370216c1', 
+'trxtime': '2021-11-24 18:10:35.822130', 
+'from_address': 'coinbase', 'to_address': '0xeee76f840a6fAd52F4dcd8d24406cc77F2B6b695', 
+'amount': 10000000, 'fee': 0, 'block_index': '0', 
+'block_hash': '', 
+'status': 1}, 
+{'trxhash': '990e6f4fb83fd734b08683cad17f2776598d91e81fa46ab5d547ff1e370216c1', 
+'trxtime': '2021-11-24 18:10:35.822130', 
+'from_address': 'coinbase', 'to_address': '0xeee76f840a6fAd52F4dcd8d24406cc77F2B6b695', 
+'amount': 10000000, 'fee': 0, 'block_index': '0', 
+'block_hash': '', 
+'status': 1}]
+
+
+{'block_index': '6', 
+'nonce': 97763, 
+'tstamp': '2021-11-28 13:03:56.812781', 
+'transaction': [{'trxhash': 'f6c1d65eff4f32c8c8de34d412f3c2fdb82725b3d0e25188c468ee655b2acd83', 
+                 'trxtime': '2021-11-28 13:03:56.812781', 'blocktime': '2021-11-28 13:03:56.812781', 
+                 'from_address': '0xfeeesaddress', 
+                 'to_address': 
+                 '0x16c243a961f56819688e2cefeba9a268ce40abd0', 
+                 'amountin': '0.00000000', 
+                 'amountout': '0.00000000', 
+                 'fee': '0.00000000', 
+                 'sizeof': 117, 
+                 'block_index': '6', 
+                 'status': 1}
+				 ], 
+'block_size': 117, 
+'minerName': 
+'ansarul', 
+'minerAddress': 
+'0x16c243a961f56819688e2cefeba9a268ce40abd0', 
+'block_reward': '0.00000000', 
+'fee_reward': '0.00000000', 
+'prevhash': '0000642ea3d67ca4cca5786226abd7e8c27d0520d55ceb103ecd6d63868f207a', 
+'hash': '0000d43c7d9177247596d063724b12aee02675fe9ce1748125ed2f498782ef45', 
+'markle': 'c8f861f3863e5998a2147ec684e3d69049e8bc655f88c581299e8ee404d21f4e', 
+'difficulty': 4}
+
+
+from getinfo import Info
+from blockchain import Blockchain
+from rpcserver import serverStart
+
+epay = Info()
+chain = Blockchain()
+
+transactions = chain.pending_trx
+for i in transactions:
+    #print(i)
+    i=i
+for i in range(0,500):
+    #epay.mining("Ansarul", "0x779dc4d50681bbeb2b4c46c2410c94e684d70c66")
+    #epay.mining("Mala Khatun", "0x16c243a961f56819688e2cefeba9a268ce40abd0") 
+    #print(chain.getlastBlockNumber())
+    a=0
+#epay.blockRecord()   
+
+print(chain.resolveChain())
+"""  
+va=0
+while va < len(epay.blockRecord()):
+    va+=1
+    for i in epay.blockRecord():
+        if va==i['block_index']:
+            print(i,'\n')"""
+
+chain = epay.getAllBlock()
+for i in chain:
+    #for t in i['transaction']:
+        #print(t,"\n")  
+    #print(i,"\n")
+    p=0
+
+
+
+print("Bitcoin Card :",epay.getBalance("0x16c243a961f56819688e2cefeba9a268ce40abd0"))
+print("Primebank Coin :",epay.getBalance("0x779dc4d50681bbeb2b4c46c2410c94e684d70c66"))
+print("Coinbase :",epay.getBalance("coinbase"))
+
+   
+print(epay.getSupply())
+print(epay.isChainValid()) 
+
+#print(leveldb.db.get(b'500').decode())
+#print(epay.getlastBlockNumber())
+#print(epay.getlastBlock())
+#print(epay.getAllTransaction(),"\n")
+#print(epay.getAddressInfo("0x16c243a961f56819688e2cefeba9a268ce40abd0"),"\n")
+#print(epay.getBlockInfo("39"),"\n")
+#print(epay.getTxInfo("6e1f4c7d411ed035b92e1f21a8fff2c9488cb4aa590852e7e8fecedacef29fec"),"\n")
+#while True:
+    #hash = str(input("Enter Your Hash  "))
+    #print(epay.getTxInfo(hash))
+    #print(epay.getBlockInfo(hash))
+     #print(epay.getAddressInfo(hash))
+"""     
+trxbyaddress = epay.getAddressInfo("0x16c243a961f56819688e2cefeba9a268ce40abd0")
+for i in trxbyaddress:
+    for t in i['transactions']:
+        print(t,"\n")    """
+"""
+allblock = epay.getAllBlock()    
+for i in allblock:
+    for t in i["transaction"]:
+        print(t["trxhash"])    
+    a=0"""
+
+
