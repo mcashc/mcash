@@ -69,7 +69,7 @@ def signCheckAddress(key):
 def resolve():
 	return chain.resolveChain()
 
-server = SimpleJSONRPCServer((local_ip, port), bind_and_activate=False)
+server = SimpleJSONRPCServer(("0.0.0.0", port), bind_and_activate=False)
 def serverStart(a=0):
 	try:
 		#server = SimpleJSONRPCServer(("localhost", port), bind_and_activate=False)

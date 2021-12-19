@@ -194,8 +194,8 @@ for i in chain:
     p=0
   
 print(block.isChainValid(),"\n")
-while True:
-    print(epay.mining("Arif","0x779dC4D50681BBeB2b4c46c2410C94E684D70c66"))
+#while True:
+    #print(epay.mining("Arif","0x779dC4D50681BBeB2b4c46c2410C94E684D70c66"))
 print(block.resolveChain(),"\n")
 print(epay.getBalance("0x779dC4D50681BBeB2b4c46c2410C94E684D70c66"))
 print(epay.getBalance("0x16C243A961f56819688E2cEFEBa9a268cE40ABd0"))
