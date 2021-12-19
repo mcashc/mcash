@@ -184,7 +184,7 @@ class Info(CoinInfo):
                            }
                 blocks.append(record)
         return blocks
-"""
+
 epay = Info()
 chain = epay.getAllBlock()
 for i in chain:
@@ -194,16 +194,12 @@ for i in chain:
     p=0
   
 print(block.isChainValid(),"\n")
-#print(epay.mining("Arif","0x779dc4d50681bbeb2b4c46c2410c94e684d70c66"))
-#print(block.resolveChain(),"\n")
-print(epay.getBalance("0x779dc4d50681bbeb2b4c46c2410c94e684d70c66"))
-print(epay.getBalance("0x16c243a961f56819688e2cefeba9a268ce40abd0"))
-
-for i in range(0,1000):
-    print(block.addTransactions("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","0x779dc4d50681bbeb2b4c46c2410c94e684d70c66",10))
-    print(block.addTransactions("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","0x779dc4d50681bbeb2b4c46c2410c94e684d70c66",30))
-    print(block.addTransactions("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","0x779dc4d50681bbeb2b4c46c2410c94e684d70c66",13))
-    
+while True:
+    print(epay.mining("Arif","0x779dC4D50681BBeB2b4c46c2410C94E684D70c66"))
+print(block.resolveChain(),"\n")
+print(epay.getBalance("0x779dC4D50681BBeB2b4c46c2410C94E684D70c66"))
+print(epay.getBalance("0x16C243A961f56819688E2cEFEBa9a268cE40ABd0"))
+ 
 print(block.pendingTrxList())
 print(block.getlastBlockNumber())
 
@@ -211,7 +207,3 @@ print(block.getlastBlockNumber())
 #print(epay.getBlockInfoByNumber(800),"\n")
 print(epay.getSupply())
 
-for i in block.blockRecord():
-    d = ast.literal_eval(i[0])
-    #print(d["hash"])
-    """
