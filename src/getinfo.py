@@ -184,7 +184,7 @@ class Info(CoinInfo):
                            }
                 blocks.append(record)
         return blocks
-
+"""
 epay = Info()
 chain = epay.getAllBlock()
 for i in chain:
@@ -206,4 +206,4 @@ print(block.getlastBlockNumber())
 #print(epay.getBlockInfoByHash("00001c4e4b6c3ba1fc5d909139cd3cea2e78bdb00b67c4f61d91e4260e8c8790"),"\n")
 #print(epay.getBlockInfoByNumber(800),"\n")
 print(epay.getSupply())
-
+"""

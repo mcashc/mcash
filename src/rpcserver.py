@@ -5,15 +5,19 @@ import jsonrpclib
 from getinfo import Info
 from blockchain import Blockchain
 from wallet import Wallet
+import configparser
+config = configparser.ConfigParser()
+config.read('../config.ini')
+
 #pip install jsonrpclib
 
 info = Info()
 chain = Blockchain()
 wallet = Wallet()
 
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
-port = 9091
+#hostname = socket.gethostname()
+#local_ip = socket.gethostbyname(hostname)
+
 
 def chainStatus():
     return info.isChainValid()
@@ -69,32 +73,35 @@ def signCheckAddress(key):
 def resolve():
 	return chain.resolveChain()
 
-server = SimpleJSONRPCServer(("0.0.0.0", port), bind_and_activate=False)
-def serverStart(a=0):
+
+host = config["serv"]["host"]
+port = int(config["serv"]["port"])
+
+server = SimpleJSONRPCServer((host,port), bind_and_activate=False)
+server.server_bind()
+server.server_activate()		
+server.register_function(newAddress)
+server.register_function(signCheckAddress)
+server.register_function(getBalance)
+server.register_function(chainStatus)
+server.register_function(getAddressInfo)
+server.register_function(getTrxInfo)
+server.register_function(getAllTransaction)
+server.register_function(getSupply)
+server.register_function(getAllBlock)
+server.register_function(blockInfoHeight)
+server.register_function(blockInfoHash)
+server.register_function(genesisBlock)
+server.register_function(lastblock)
+server.register_function(lastblockHeight)
+server.register_function(addTransaction)
+server.register_function(pendingTrx)
+server.register_function(mining)
+server.register_function(resolve)
+
+def serverStart():
 	try:
-		#server = SimpleJSONRPCServer(("localhost", port), bind_and_activate=False)
-	    #server.socket = ssl.wrap_socket(server.socket, certfile='server.pem',server_side=True)
-	    server.server_bind()
-	    server.server_activate()		
-	    server.register_function(newAddress)
-	    server.register_function(signCheckAddress)
-	    server.register_function(getBalance)
-	    server.register_function(chainStatus)
-	    server.register_function(getAddressInfo)
-	    server.register_function(getTrxInfo)
-	    server.register_function(getAllTransaction)
-	    server.register_function(getSupply)
-	    server.register_function(getAllBlock)
-	    server.register_function(blockInfoHeight)
-	    server.register_function(blockInfoHash)
-	    server.register_function(genesisBlock)
-	    server.register_function(lastblock)
-	    server.register_function(lastblockHeight)
-	    server.register_function(addTransaction)
-	    server.register_function(pendingTrx)
-	    server.register_function(mining)
-	    server.register_function(resolve)
-	    print("Server started on ",local_ip,port)
+	    print("Server started on ",host,port)
 	    server.serve_forever()
 	except:
 		server.shutdown()
