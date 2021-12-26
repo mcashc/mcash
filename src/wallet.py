@@ -7,18 +7,16 @@ class Wallet:
         kg = KeyGenerator()
         kg.seed_input('')
         key = kg.generate_key()
-        address1 = CryptoWallet.generate_address(key)
-        address = CryptoWallet.checksum_address(address1)
-        public = CryptoWallet.publickeyval(key).decode()
+        address = CryptoWallet.generate_address(key)
+        public = CryptoWallet.private_to_public(key).decode()
         return [{"privateKey":key,
                  "publickey":public,
                  "address":address}]
 
     def checkAddress(self,key):
         try:
-            address1 = CryptoWallet.generate_address(key)
-            address = CryptoWallet.checksum_address(address1)
-            public = CryptoWallet.publickeyval(key).decode()
+            address = CryptoWallet.generate_address(key)
+            public = CryptoWallet.private_to_public(key).decode()
             return [{"privateKey":key,
                      "publickey":public,
                      "address":address}]
@@ -27,8 +25,7 @@ class Wallet:
 
     def signWallet(self,key):
         try:
-            address1 = CryptoWallet.generate_address(key)
-            address = CryptoWallet.checksum_address(address1)
+            address = CryptoWallet.generate_address(key)
             return address
         except:
             return "Failed" 

@@ -5,8 +5,8 @@ hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 port=9091
 def main():
-    #conn = Server('http://'+local_ip+":"+str(port))
-    conn = Server('http://161.97.89.98:9091')
+    conn = Server('http://'+local_ip+":"+str(port))
+    #conn = Server('http://161.97.89.98:9091')
     #block index 8487
     #print(conn.chainStatus())
     #print(conn.resolve(),"\n")
