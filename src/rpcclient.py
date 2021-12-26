@@ -12,17 +12,23 @@ def main():
     #print(conn.resolve(),"\n")
     #print(conn.chainStatus(),"\n")
     #print(conn.getSupply())
-    #print(conn.getBalance("0x779dc4d50681bbeb2b4c46c2410c94e684d70c66"))
-    #print(conn.getBalance("0x16c243a961f56819688e2cefeba9a268ce40abd0"))
+    #print(conn.getBalance("18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU"))
+    #print(conn.getBalance("1G76cdRnFjA6gq23ihrx87WPMihrcJHuHF"))
     #print(conn.newAddress())
     #print(conn.signCheckAddress("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc"))
 
     #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","0x779dc4d50681bbeb2b4c46c2410c94e684d70c66",952267.00000000))
     #print(conn.pendingTrx())
     while True:
-        print(conn.mining("M Miner","0xeee76f840a6fAd52F4dcd8d24406cc77F2B6b695"))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",9.00000000))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",3.00000000))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",2.00000000))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",6.00000000))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",8.00000000))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",5.00000000))
+        print(conn.mining("M Miner","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU"))
     #print(conn.pendingTrx())
-	#0xeee76f840a6fAd52F4dcd8d24406cc77F2B6b695
+	#1G76cdRnFjA6gq23ihrx87WPMihrcJHuHF
     print(conn.lastblock())
     print(conn.chainStatus(),"\n")
     #trx = conn.blockInfoHeight(8487)
