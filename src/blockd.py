@@ -10,7 +10,7 @@ def firstBlock():
         genblock.block_reward=0
         genblock.minerName="Genesis Mining"
         genblock.block_size=0
-        genblock.minerAddress="0x16c243a961f56819688e2cefeba9a268ce40abd0"  
+        genblock.minerAddress="18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU"  
         return genblock
 
 def genesis():

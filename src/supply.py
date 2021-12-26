@@ -25,6 +25,6 @@ class Supply(CoinInfo):
         elif val<=20000000:
             return 5
         elif val<self.supply:
-            return 4
+            return 7
         else:
             return 6

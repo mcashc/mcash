@@ -25,7 +25,7 @@ def main():
         #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",2.00000000))
         #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",6.00000000))
         #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",8.00000000))
-        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",5.00000000))
+        #print(conn.addTransaction("fbf0b8ebfcc1876ddf9e9fbecb084eda4f466070a49a0f7198702549127ff9dc","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU",10436389.00000000))
         print(conn.mining("M Miner","18KKMEyQUeCzA1TgNMepTYqHVH5mhamAPU"))
     #print(conn.pendingTrx())
 	#1G76cdRnFjA6gq23ihrx87WPMihrcJHuHF
