@@ -102,7 +102,10 @@ class Blockchain(CoinInfo):
             miningBlock.block_reward = f'{block_reward:.{self.decimal}f}'
             miningBlock.fee_reward=f'{fees:.{self.decimal}f}'
             miningBlock.difficulty=difficulty
-            miningBlock.mineBlock(difficulty)   
+            if(len(trxlist)>500):
+                miningBlock.mineBlock(3)
+            else:    
+                miningBlock.mineBlock(difficulty)   
             miningBlock.markle=hash  
             miningBlock.block_size=sizeb.calcSize(trxlist)
             current_block = newBlock(miningBlock)

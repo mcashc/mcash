@@ -1,0 +1,11 @@
+Port Status Check 
+sudo ss -tulwn | grep LISTEN
+
+Background Run Process
+pm2 start mcashd --interpreter=python3
+
+Background Stop Process
+pm2 stop mcashd
+
+Remove From App List
+pm2 delete mcashd
